@@ -1,8 +1,11 @@
-﻿import React from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { LICENSE_NO } from '../../utils/constants';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const WhyUs = () => {
+  useScrollAnimation();
+
   const testimonials = [
     {
       stars: '★★★★★',
@@ -27,16 +30,18 @@ export const WhyUs = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/corporate_desk_empty_team.jpeg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-heading">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
               <span className="text-amber-300">Why Choose Us</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               Industry-leading recruitment with unmatched expertise and proven success record
             </p>
           </div>
@@ -44,11 +49,11 @@ export const WhyUs = () => {
       </section>
 
       {/* Key Reasons */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Reason 1 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-left">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -66,7 +71,7 @@ export const WhyUs = () => {
             </div>
 
             {/* Reason 2 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-right">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -84,7 +89,7 @@ export const WhyUs = () => {
             </div>
 
             {/* Reason 3 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-left">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -102,7 +107,7 @@ export const WhyUs = () => {
             </div>
 
             {/* Reason 4 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-right">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -120,7 +125,7 @@ export const WhyUs = () => {
             </div>
 
             {/* Reason 5 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-left">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -138,7 +143,7 @@ export const WhyUs = () => {
             </div>
 
             {/* Reason 6 */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-fade-in-right">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-14 w-14 rounded-xl bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white shadow-md">
                   <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 20 20">
@@ -159,30 +164,30 @@ export const WhyUs = () => {
       </section>
 
       {/* Comparison Statistics */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">What Sets Us Apart</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100 scroll-scale-in">
               <div className="text-4xl font-bold text-amber-500 mb-2 font-heading">1000+</div>
               <p className="text-base font-bold text-slate-800 font-heading">Successful Placements</p>
               <p className="text-slate-500 text-xs mt-2 leading-relaxed">Happy professionals working globally</p>
             </div>
 
-            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100 scroll-scale-in">
               <div className="text-4xl font-bold text-amber-500 mb-2 font-heading">50+</div>
               <p className="text-base font-bold text-slate-800 font-heading">Countries</p>
               <p className="text-slate-500 text-xs mt-2 leading-relaxed">Worldwide employment opportunities</p>
             </div>
 
-            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100 scroll-scale-in">
               <div className="text-4xl font-bold text-amber-500 mb-2 font-heading">100%</div>
               <p className="text-base font-bold text-slate-800 font-heading">Legal Compliance</p>
               <p className="text-slate-500 text-xs mt-2 leading-relaxed">MEA approved & government licensed</p>
             </div>
 
-            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100">
+            <div className="bg-white text-center p-6 rounded-2xl shadow-sm border border-slate-100 scroll-scale-in">
               <div className="text-4xl font-bold text-amber-500 mb-2 font-heading">15+</div>
               <p className="text-base font-bold text-slate-800 font-heading">Years of Service</p>
               <p className="text-slate-500 text-xs mt-2 leading-relaxed">Industry expertise and experience</p>
@@ -192,12 +197,12 @@ export const WhyUs = () => {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">Our Commitment to You</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">🎯</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-4 font-heading">Goal Oriented</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -206,7 +211,7 @@ export const WhyUs = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">🤝</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-4 font-heading">Ethical Partnership</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -215,7 +220,7 @@ export const WhyUs = () => {
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:shadow-lg transition-all duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">🌍</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-4 font-heading">Global Network</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -228,13 +233,13 @@ export const WhyUs = () => {
       </section>
 
       {/* Client Testimonials */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">What Our Clients Say</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
-              <div key={idx} className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:scale-[1.02] transition-transform duration-300">
+              <div key={idx} className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:scale-[1.02] transition-transform duration-300 scroll-scale-in">
                 <div className="flex items-center gap-2 mb-4 text-amber-500">
                   {t.stars}
                 </div>
@@ -250,9 +255,9 @@ export const WhyUs = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 scroll-scale-in">
             <h3 className="text-3xl font-bold text-white mb-4 font-heading">Join Thousands of Successful Professionals</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Start your overseas career journey with the most trusted recruitment agency in India.

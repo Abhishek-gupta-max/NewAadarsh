@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import jobService from '../../services/jobService';
 import useApi from '../../hooks/useApi';
 import Loader from '../../components/common/Loader/Loader';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const Jobs = () => {
   const { data: jobs, loading, error, request: fetchJobs } = useApi(jobService.getJobs);
@@ -13,14 +14,6 @@ export const Jobs = () => {
   useEffect(() => {
     fetchJobs();
   }, [fetchJobs]);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[50vh]">
-        <Loader />
-      </div>
-    );
-  }
 
   // Extract unique categories and locations for filters
   const categories = jobs ? [...new Set(jobs.map((j) => j.category).filter(Boolean))] : [];
@@ -39,19 +32,32 @@ export const Jobs = () => {
       })
     : [];
 
+  // Invoke scroll animation hook, dependencies ensure it runs after list renders
+  useScrollAnimation([filteredJobs]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-brandRed/10 rounded-full -top-[100px] -right-[100px] blur-2xl" />
-        <div className="absolute w-[200px] h-[200px] bg-brandBlue/10 rounded-full -bottom-[50px] -left-[50px] blur-2xl" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-brandRed/10 rounded-full -top-[100px] -right-[100px] blur-2xl pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-brandBlue/10 rounded-full -bottom-[50px] -left-[50px] blur-2xl pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-heading">
-              <span className="text-white bg-clip-text">Active Job Positions</span>
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
+              <span className="text-white">Active Job Positions</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto font-medium">
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               Explore our current global career opportunities and apply today
             </p>
           </div>
@@ -59,10 +65,10 @@ export const Jobs = () => {
       </section>
 
       {/* Filter and Job List Section */}
-      <section className="py-16 px-4 bg-[#F8F9FA]">
+      <section className="py-16 px-4 bg-[#F8F9FA] scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           {/* Filters card */}
-          <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100/80 mb-10 flex flex-col md:flex-row gap-4 items-center justify-between">
+          <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100/80 mb-10 flex flex-col md:flex-row gap-4 items-center justify-between scroll-scale-in">
             <div className="w-full md:w-1/3 relative">
               <input
                 type="text"
@@ -113,7 +119,7 @@ export const Jobs = () => {
 
           {/* Job cards grid */}
           {filteredJobs.length === 0 ? (
-            <div className="text-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm max-w-lg mx-auto">
+            <div className="text-center py-20 bg-white rounded-3xl border border-slate-100 shadow-sm max-w-lg mx-auto scroll-scale-in">
               <span className="text-6xl block mb-4">💼</span>
               <h3 className="text-2xl font-bold text-slate-800 font-heading">No Jobs Found</h3>
               <p className="text-slate-500 mt-2 text-sm max-w-xs mx-auto">
@@ -125,8 +131,7 @@ export const Jobs = () => {
               {filteredJobs.map((job, index) => (
                 <div 
                   key={job.id} 
-                  className="animate-card-fade-in group bg-white rounded-3xl border border-slate-100 hover:border-brandRed/20 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
-                  style={{ animationDelay: `${index * 80}ms` }}
+                  className="scroll-scale-in group bg-white rounded-3xl border border-slate-100 hover:border-brandRed/20 shadow-sm hover:shadow-xl hover:shadow-blue-900/5 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden"
                 >
                   <div className="p-6 relative">
                     {/* Top colored line indicator */}

@@ -16,7 +16,7 @@ function mapJobRow($row) {
         'experience' => isset($row['experience_needed']) ? $row['experience_needed'] : (isset($row['experience']) ? $row['experience'] : ''),
         'salary' => isset($row['salary_range']) ? $row['salary_range'] : (isset($row['salary']) ? $row['salary'] : ''),
         'job_location' => isset($row['location']) ? $row['location'] : (isset($row['job_location']) ? $row['job_location'] : ''),
-        'company_name' => isset($row['company_name']) ? $row['company_name'] : 'New Adarsh Overseas Services',
+        'company_name' => isset($row['company_name']) ? $row['company_name'] : 'NEW ADARSH MANPOWER CONSULTANT PRIVATE LIMITED',
         'category' => isset($row['category']) ? $row['category'] : 'Manpower',
         'vacancies' => isset($row['vacancies']) ? $row['vacancies'] : 'Openings',
         'status' => isset($row['status']) ? $row['status'] : 'active',

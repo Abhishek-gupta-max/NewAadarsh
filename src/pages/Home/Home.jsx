@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/common/Modal/Modal';
 import { COMPANY_NAME, CONTACT_INFO } from '../../utils/constants';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const Home = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ src: '', title: '' });
+
+  useScrollAnimation();
 
   const openCertModal = (src, title) => {
     setModalContent({ src, title });
@@ -15,17 +18,19 @@ export const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12 animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
               <span className="text-amber-300">Your Gateway to Global Opportunities</span>
             </h1>
             
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Connect skilled Indian professionals with trusted international employers. We specialize in overseas recruitment across Middle East, Europe, Asia & Gulf regions.
             </p>
             
@@ -70,7 +75,7 @@ export const Home = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-slate-50 to-blue-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-slate-50 to-blue-50 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white text-center p-6 rounded-2xl shadow-md border border-slate-100 hover:scale-[1.03] transition-all duration-300">
@@ -94,7 +99,7 @@ export const Home = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-blue-900 mb-4 font-heading">Our Services</h2>
@@ -106,8 +111,7 @@ export const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
             <div 
-              className="animate-card-fade-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300"
-              style={{ animationDelay: '0ms' }}
+              className="scroll-scale-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-305"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -120,8 +124,7 @@ export const Home = () => {
             
             {/* Service 2 */}
             <div 
-              className="animate-card-fade-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300"
-              style={{ animationDelay: '80ms' }}
+              className="scroll-scale-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-305"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -134,8 +137,7 @@ export const Home = () => {
             
             {/* Service 3 */}
             <div 
-              className="animate-card-fade-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300"
-              style={{ animationDelay: '160ms' }}
+              className="scroll-scale-in bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-305"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
@@ -156,7 +158,7 @@ export const Home = () => {
       </section>
 
       {/* About Us Section */}
-      <section className="py-24 px-4 bg-gradient-to-r from-blue-50 to-slate-50" id="about">
+      <section className="py-24 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in" id="about">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-14">
             <span className="inline-block px-4 py-1.5 bg-amber-100 text-amber-700 text-sm font-semibold rounded-full mb-4">Who We Are</span>
@@ -166,7 +168,7 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left: Owner Image Card */}
-            <div className="lg:col-span-5">
+            <div className="lg:col-span-5 scroll-fade-in-left">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-shadow duration-500">
                 <div className="relative overflow-hidden h-72 sm:h-80">
                   <img src="/images/corporate_desk_empty_team.jpeg" alt="Founder - New Adarsh" className="w-full h-full object-cover" />
@@ -187,7 +189,7 @@ export const Home = () => {
             </div>
 
             {/* Right: About Content + Stats */}
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-7 scroll-fade-in-right">
               <h3 className="text-3xl font-bold text-blue-900 mb-5 font-heading">Your Trusted Global Recruitment Partner</h3>
               <p className="text-slate-700 text-lg mb-4 leading-relaxed">
                 {COMPANY_NAME} is an MEA-approved, Government of India licensed overseas manpower recruitment agency headquartered in Deoria Sadar, Uttar Pradesh. With over 15 years of experience, we specialize in connecting skilled Indian professionals with trusted international employers.
@@ -232,7 +234,7 @@ export const Home = () => {
       </section>
 
       {/* Government Certificates Section */}
-      <section className="py-20 bg-white" id="certificates">
+      <section className="py-20 bg-white scroll-fade-in" id="certificates">
         <div className="container mx-auto max-w-6xl px-4">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full mb-4">Official Recognition</span>
@@ -242,7 +244,7 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* Certificate 1 */}
-            <div>
+            <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-amber-200 cursor-pointer" 
                 onClick={() => openCertModal('/images/certificate.PNG', 'MEA Registration Certificate')}
@@ -266,7 +268,7 @@ export const Home = () => {
             </div>
 
             {/* Certificate 2 */}
-            <div>
+            <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 cursor-pointer" 
                 onClick={() => openCertModal('/images/license_certificate.PNG', 'Government License Certificate')}
@@ -290,7 +292,7 @@ export const Home = () => {
             </div>
 
             {/* Certificate 3 */}
-            <div>
+            <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-green-200 cursor-pointer" 
                 onClick={() => openCertModal('/images/mea_logo.png', 'MEA Official Emblem')}
@@ -324,7 +326,7 @@ export const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 px-4 bg-gradient-to-r from-brandBlue to-blue-900 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-brandBlue to-blue-900 text-white scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4 font-heading">Why Choose Us</h2>
@@ -360,7 +362,7 @@ export const Home = () => {
             
             <div className="flex gap-4">
               <div className="w-12 h-12 rounded-xl bg-amber-300/20 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 text-amber-305" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
                 </svg>
@@ -373,7 +375,7 @@ export const Home = () => {
             
             <div className="flex gap-4">
               <div className="w-12 h-12 rounded-xl bg-amber-300/20 flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-amber-300" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-6 h-6 text-amber-305" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 17v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.381z" clipRule="evenodd"/>
                 </svg>
               </div>
@@ -387,7 +389,7 @@ export const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-scale-in">
         <div className="container mx-auto max-w-4xl">
           <div className="bg-gradient-to-r from-blue-50 to-slate-50 border-2 border-amber-300/30 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
             <h3 className="text-3xl font-bold text-blue-900 mb-4 font-heading">Ready to Start Your Journey?</h3>

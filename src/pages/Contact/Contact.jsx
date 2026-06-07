@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import userService from '../../services/userService';
 import { CONTACT_INFO, FAQS } from '../../utils/constants';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const Contact = () => {
+  useScrollAnimation();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,16 +57,18 @@ export const Contact = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-heading">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
               <span className="text-amber-300">Get in Touch</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               We're here to help! Contact us for any queries about overseas job opportunities
             </p>
           </div>
@@ -71,11 +76,11 @@ export const Contact = () => {
       </section>
 
       {/* Contact Information Cards */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Address */}
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">📍</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Our Office</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -87,7 +92,7 @@ export const Contact = () => {
             </div>
             
             {/* Phone */}
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">📞</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Call Us</h3>
               <p className="text-slate-700 text-sm font-semibold mb-2">
@@ -103,7 +108,7 @@ export const Contact = () => {
             </div>
 
             {/* Email */}
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 text-center hover:scale-[1.02] transition-transform duration-300 scroll-scale-in">
               <div className="text-5xl mb-4">📧</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Email Us</h3>
               <p className="text-slate-700 text-sm font-semibold mb-2">
@@ -116,7 +121,7 @@ export const Contact = () => {
           </div>
 
           {/* Business Hours */}
-          <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-3xl border border-slate-100">
+          <div className="bg-gradient-to-r from-blue-50 to-slate-50 p-8 rounded-3xl border border-slate-100 scroll-scale-in">
             <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center font-heading">Business Hours</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center bg-white p-4 rounded-xl border border-slate-200/60 shadow-sm">
@@ -137,13 +142,13 @@ export const Contact = () => {
       </section>
 
       {/* Quick Process Steps */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">How It Works</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center hover:shadow-md transition-shadow scroll-scale-in">
                 <div className="text-4xl font-bold text-amber-500 mb-4 font-heading">{st.num}</div>
                 <h3 className="text-lg font-bold text-blue-900 mb-3 font-heading">{st.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{st.text}</p>
@@ -154,11 +159,11 @@ export const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-2xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-12 font-heading">Send us a Message</h2>
 
-          <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+          <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 scroll-scale-in">
             {status.message && (
               <div className={`p-4 mb-6 rounded-xl border ${
                 status.type === 'success' ? 'bg-emerald-50 text-emerald-800 border-emerald-200' : 'bg-red-50 text-red-800 border-red-200'
@@ -250,10 +255,10 @@ export const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-slate-100">
+      <section className="py-20 bg-slate-100 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-12 font-heading">Find Us on Map</h2>
-          <div className="rounded-3xl overflow-hidden shadow-lg border border-white" style={{ height: '400px' }}>
+          <div className="rounded-3xl overflow-hidden shadow-lg border border-white scroll-scale-in" style={{ height: '400px' }}>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3577.0!2d83.7835!3d26.5024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3991e01f0000001%3A0x1!2sDeoria%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000"
               width="100%" 
@@ -269,12 +274,12 @@ export const Contact = () => {
       </section>
 
       {/* Why Contact Us */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">Why Contact Us?</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-scale-in">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-amber-500/10 text-amber-600">
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
@@ -288,7 +293,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-scale-in">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-amber-500/10 text-amber-600">
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
@@ -302,7 +307,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-4 scroll-scale-in">
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-amber-500/10 text-amber-600">
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 20 20">
@@ -320,13 +325,13 @@ export const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">Frequently Asked Questions</h2>
 
           <div className="space-y-4">
             {FAQS.map((faq, idx) => (
-              <details key={idx} className="group border border-slate-150 rounded-2xl bg-white overflow-hidden shadow-sm">
+              <details key={idx} className="group border border-slate-150 rounded-2xl bg-white overflow-hidden shadow-sm scroll-scale-in">
                 <summary className="flex cursor-pointer items-center justify-between p-6 hover:bg-slate-50 transition-colors list-none">
                   <h3 className="text-lg font-bold text-blue-900 font-heading">{faq.question}</h3>
                   <svg className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -343,9 +348,9 @@ export const Contact = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-white scroll-fade-in">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 scroll-scale-in">
             <h3 className="text-3xl font-bold text-white mb-4 font-heading">Ready to Start Your Journey?</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Don't wait any longer! Apply now or contact us for more information about available opportunities.

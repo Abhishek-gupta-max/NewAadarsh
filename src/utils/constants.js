@@ -1,5 +1,5 @@
 export const COMPANY_NAME = "NEW ADARSH MANPOWER CONSULTANT PRIVATE LIMITED";
-export const COMPANY_SHORT_NAME = "New Adarsh Overseas Services";
+export const COMPANY_SHORT_NAME = "New Adarsh Manpower Consultant";
 export const LICENSE_NO = "B-3395/UP/COM/100/5/11401/2026";
 export const CIN = "U78300UP2025PTC219970";
 export const GST = "09AAKCN3163A1ZN";

@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../../components/common/Modal/Modal';
 import { COMPANY_NAME, LICENSE_NO, CONTACT_INFO } from '../../utils/constants';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const About = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ src: '', title: '' });
+
+  useScrollAnimation();
 
   const openCertModal = (src, title) => {
     setModalContent({ src, title });
@@ -15,16 +18,18 @@ export const About = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/corporate_desk_empty_team.jpeg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
+          <div className="text-center animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
               <span className="text-amber-300">About New Adarsh</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               Your trusted partner in global manpower recruitment
             </p>
           </div>
@@ -32,11 +37,11 @@ export const About = () => {
       </section>
 
       {/* Company Info Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
             {/* Left: Our Story */}
-            <div>
+            <div className="scroll-fade-in-left">
               <h2 className="text-4xl font-bold text-blue-900 mb-6 font-heading">Our Story</h2>
               <p className="text-slate-700 text-lg mb-4 leading-relaxed">
                 I founded New Adarsh Manpower with a single mission: to remove fear, fraud, and uncertainty from job placement services. For over 15 years, I have personally worked to ensure that every candidate we place enters a safe, verified, and dignified workplace.
@@ -53,7 +58,7 @@ export const About = () => {
             </div>
             
             {/* Right: Owner Image Card */}
-            <div>
+            <div className="scroll-fade-in-right">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300">
                 <div className="bg-gradient-to-br from-blue-50 to-blue-100 h-80 flex items-center justify-center relative overflow-hidden">
                   <img src="/images/corporate_desk_empty_team.jpeg" alt="Owner - New Adarsh" className="w-full h-full object-cover" />
@@ -89,9 +94,9 @@ export const About = () => {
       </section>
 
       {/* Our Commitment */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
-          <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-100">
+          <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-100 scroll-scale-in">
             <h3 className="text-2xl font-bold text-blue-900 mb-6 font-heading">Our Commitment</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex gap-4">
@@ -124,10 +129,10 @@ export const About = () => {
       </section>
 
       {/* Mission & Values */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all scroll-scale-in">
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -137,7 +142,7 @@ export const About = () => {
               <p className="text-slate-600 text-sm leading-relaxed">To facilitate seamless, legal, and transparent overseas recruitment while ensuring the highest standards of ethical conduct and compliance.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all scroll-scale-in">
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
@@ -147,7 +152,7 @@ export const About = () => {
               <p className="text-slate-600 text-sm leading-relaxed">To become the most trusted overseas recruitment partner connecting talented professionals with global opportunities.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all">
+            <div className="bg-white rounded-2xl p-6 shadow-md border border-slate-100 hover:shadow-lg transition-all scroll-scale-in">
               <div className="w-16 h-16 bg-gradient-to-br from-[#e11d48] to-[#be123c] rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-sm">
                 <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 3.062v6.218c0 1.695-.603 2.933-1.391 3.467.19.294.335.652.335 1.035 0 1.641-1.487 3-3.322 3H7.631c-1.835 0-3.322-1.359-3.322-3 0-.383.145-.74.335-1.035-.788-.534-1.391-1.772-1.391-3.467V6.518c0-1.691.977-3.149 2.414-3.063z" clipRule="evenodd"/></svg>
               </div>

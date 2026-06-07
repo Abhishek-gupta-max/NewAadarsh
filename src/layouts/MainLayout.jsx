@@ -39,7 +39,7 @@ export const MainLayout = () => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-slate-50 text-slate-800">
+    <div className="flex flex-col min-h-screen font-sans bg-white text-slate-800">
       {globalLoading && <Loader />}
       
       {/* Fixed Wrapper for Header */}

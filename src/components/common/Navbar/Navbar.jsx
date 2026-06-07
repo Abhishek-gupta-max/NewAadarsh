@@ -37,31 +37,30 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center justify-center flex-1 gap-2 xl:gap-4 px-6 font-semibold">
-            {NAV_LINKS.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-3.5 py-2 rounded-lg text-sm transition-all duration-200 ${
-                    isActive
-                      ? 'text-[#0047ba] bg-blue-50/60 font-bold'
-                      : 'text-slate-700 hover:bg-slate-50 hover:text-[#0047ba]'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </div>
+          {/* Desktop Menu & CTA Group */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 font-semibold">
+            <div className="flex items-center gap-1.5 xl:gap-3">
+              {NAV_LINKS.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={`px-3 py-2 rounded-lg text-sm whitespace-nowrap transition-all duration-200 ${
+                      isActive
+                        ? 'text-[#0047ba] bg-blue-50/60 font-bold'
+                        : 'text-slate-700 hover:bg-slate-50 hover:text-[#0047ba]'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </div>
 
-          {/* CTA Button (Desktop) */}
-          <div className="hidden lg:block">
             <Link
               to="/apply"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#e11d48] to-[#be123c] hover:from-[#be123c] hover:to-[#9f1239] text-white text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#e11d48] to-[#be123c] hover:from-[#be123c] hover:to-[#9f1239] text-white text-sm font-bold rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />

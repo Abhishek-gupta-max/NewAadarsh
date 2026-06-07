@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const Process = () => {
+  useScrollAnimation();
+
   const steps = [
     { num: 1, title: 'Initial Consultation', text: 'Meet with our expert consultants to discuss your career goals, skills, and job preferences for overseas placement.' },
     { num: 2, title: 'Document Submission', text: 'Provide all necessary documents including passport, certificates, and experience letters for verification.' },
@@ -24,16 +27,18 @@ export const Process = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-heading">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight font-heading">
               <span className="text-amber-300">Our Process</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               8 transparent steps from application to successful placement abroad
             </p>
           </div>
@@ -41,13 +46,13 @@ export const Process = () => {
       </section>
 
       {/* Process Overview */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">How We Work</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, idx) => (
-              <div key={idx} className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
+              <div key={idx} className="p-6 bg-white rounded-2xl shadow-md border border-slate-100 hover:-translate-y-2 hover:shadow-lg transition-all duration-300 scroll-scale-in">
                 <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-[#e11d48] to-[#be123c] text-white rounded-full text-2xl font-bold mb-4 font-heading shadow-md">
                   {st.num}
                 </div>
@@ -60,13 +65,13 @@ export const Process = () => {
       </section>
 
       {/* Detailed Process Timeline */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-slate-50 scroll-fade-in">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">Detailed Timeline</h2>
           
           <div className="space-y-6">
             {timelinePhases.map((phase, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow scroll-fade-in-left">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
                     <div className="flex items-center justify-center h-12 w-12 rounded-xl bg-amber-500/10 text-amber-600 border border-amber-500/20">
@@ -90,12 +95,12 @@ export const Process = () => {
       </section>
 
       {/* Why Our Process Works */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16 font-heading">Why Our Process Works</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center scroll-scale-in">
               <div className="text-5xl mb-4">🎯</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Transparent</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -103,7 +108,7 @@ export const Process = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center scroll-scale-in">
               <div className="text-5xl mb-4">⚡</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Efficient</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -111,7 +116,7 @@ export const Process = () => {
               </p>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center">
+            <div className="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center scroll-scale-in">
               <div className="text-5xl mb-4">🛡️</div>
               <h3 className="text-2xl font-bold text-blue-900 mb-3 font-heading">Legal & Safe</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
@@ -123,9 +128,9 @@ export const Process = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
+          <div className="bg-gradient-to-br from-brandBlue to-blue-900 text-center py-16 px-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 scroll-scale-in">
             <h3 className="text-3xl font-bold text-white mb-4 font-heading">Ready to Begin Your Journey?</h3>
             <p className="text-blue-100 mb-8 text-lg">
               Start your application now and take the first step towards an exciting overseas career!

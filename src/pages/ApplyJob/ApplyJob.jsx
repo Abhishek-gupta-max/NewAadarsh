@@ -1,9 +1,12 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import userService from '../../services/userService';
 import { validateEmail, validatePhone, validateFileSize, validateFileType } from '../../utils/validators';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const ApplyJob = () => {
+  useScrollAnimation();
+
   const location = useLocation();
   const fileInputRef = useRef(null);
 
@@ -69,7 +72,7 @@ export const ApplyJob = () => {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-
+ 
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       
@@ -151,14 +154,16 @@ export const ApplyJob = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 font-heading">Apply Now</h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 font-heading">Apply Now</h1>
+            <p className="text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed">
               Join our database of professionals and start your international career journey
             </p>
           </div>
@@ -166,7 +171,7 @@ export const ApplyJob = () => {
       </section>
 
       {/* Main Form Content */}
-      <section className="py-16 px-4 bg-[#F8F9FA]">
+      <section className="py-16 px-4 bg-[#F8F9FA] scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Sidebar Benefits */}
@@ -174,17 +179,17 @@ export const ApplyJob = () => {
               <div className="sticky top-28 space-y-4">
                 <h3 className="text-2xl font-bold text-blue-900 mb-6 font-heading">Why Apply With Us?</h3>
                 
-                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300">
+                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300 scroll-scale-in">
                   <h4 className="font-bold text-blue-900 mb-2 font-heading">Government Approved</h4>
                   <p className="text-slate-600 text-xs leading-relaxed">Fully approved and registered by Ministry of External Affairs, Govt of India.</p>
                 </div>
                 
-                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300">
+                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300 scroll-scale-in">
                   <h4 className="font-bold text-blue-900 mb-2 font-heading">Quick Processing</h4>
                   <p className="text-slate-600 text-xs leading-relaxed">Fast evaluation and visa document processing for all matching candidates.</p>
                 </div>
                 
-                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300">
+                <div className="bg-white p-5 rounded-2xl border-l-4 border-amber-500 shadow-sm hover:translate-x-1 transition-all duration-300 scroll-scale-in">
                   <h4 className="font-bold text-blue-900 mb-2 font-heading">Expert Team</h4>
                   <p className="text-slate-600 text-xs leading-relaxed">Your application is reviewed by experienced global manpower professionals.</p>
                 </div>
@@ -192,7 +197,7 @@ export const ApplyJob = () => {
             </div>
 
             {/* Form Section */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 scroll-scale-in">
               <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
                 <div className="bg-gradient-to-r from-[#e11d48] to-[#be123c] text-white p-8">
                   <h2 className="text-3xl font-bold font-heading">Application Form</h2>

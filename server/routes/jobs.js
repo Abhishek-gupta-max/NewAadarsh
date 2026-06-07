@@ -18,7 +18,7 @@ function mapJobRow(row) {
     experience:   row.experience_needed || row.experience || '',
     salary:       row.salary_range      || row.salary     || '',
     job_location: row.location          || row.job_location || '',
-    company_name: row.company_name      || 'New Adarsh Overseas Services',
+    company_name: row.company_name      || 'NEW ADARSH MANPOWER CONSULTANT PRIVATE LIMITED',
     category:     row.category          || 'Manpower',
     vacancies:    row.vacancies         || 'Openings',
     status:       row.status            || 'active',

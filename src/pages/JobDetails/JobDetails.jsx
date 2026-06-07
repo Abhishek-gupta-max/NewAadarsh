@@ -4,6 +4,7 @@ import jobService from '../../services/jobService';
 import useApi from '../../hooks/useApi';
 import Loader from '../../components/common/Loader/Loader';
 import { CONTACT_INFO } from '../../utils/constants';
+import useScrollAnimation from '../../hooks/useScrollAnimation';
 
 export const JobDetails = () => {
   const { slug } = useParams();
@@ -13,6 +14,9 @@ export const JobDetails = () => {
   useEffect(() => {
     fetchJobDetail(slug);
   }, [slug, fetchJobDetail]);
+
+  // Invoke scroll animation hook, dependency ensures it runs after detail renders
+  useScrollAnimation([job]);
 
   if (loading) {
     return (
@@ -45,22 +49,24 @@ export const JobDetails = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden text-white pt-24 pb-20 bg-gradient-to-br from-brandBlue to-blue-900">
-        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px]" />
-        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px]" />
+      <section className="relative overflow-hidden text-white pt-32 pb-24 md:pt-40 md:pb-36 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero_city_buildings.jpg')" }}>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-blue-950/90 to-blue-900/80 pointer-events-none" />
+        
+        <div className="absolute w-[300px] h-[300px] bg-amber-500/10 rounded-full -top-[100px] -right-[100px] pointer-events-none" />
+        <div className="absolute w-[200px] h-[200px] bg-amber-500/5 rounded-full -bottom-[50px] -left-[50px] pointer-events-none" />
         
         <div className="container mx-auto px-4 max-w-6xl relative z-10">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-heading">{job.title}</h1>
-            <p className="text-lg text-blue-100 font-medium">{job.company_name}</p>
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-heading">{job.title}</h1>
+            <p className="text-xl text-blue-100 font-medium">{job.company_name}</p>
           </div>
         </div>
       </section>
 
       {/* Main Details Section */}
-      <section className="py-20 px-4 bg-[#F8F9FA]">
+      <section className="py-20 px-4 bg-[#F8F9FA] scroll-fade-in">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden scroll-scale-in">
             <div className="p-8 md:p-10">
               
               {/* Header Title Bar */}
@@ -121,7 +127,7 @@ export const JobDetails = () => {
               </div>
 
               {/* Apply/Actions Call Box */}
-              <div className="mt-12 bg-gradient-to-br from-brandBlue to-blue-900 rounded-3xl p-8 text-center text-white border border-blue-800 shadow-lg">
+              <div className="mt-12 bg-gradient-to-br from-brandBlue to-blue-900 rounded-3xl p-8 text-center text-white border border-blue-800 shadow-lg scroll-scale-in">
                 <h2 className="text-2xl font-bold font-heading mb-1">
                   Apply For This Job
                 </h2>
@@ -132,7 +138,7 @@ export const JobDetails = () => {
                 <div className="flex flex-wrap justify-center gap-4">
                   <a 
                     href={`tel:${CONTACT_INFO.phone}`} 
-                    className="px-6 py-3 bg-[#e11d48] hover:bg-[#be123c] text-blue-950 font-bold rounded-xl text-sm transition-all"
+                    className="px-6 py-3 bg-[#e11d48] hover:bg-[#be123c] text-white font-bold rounded-xl text-sm transition-all"
                   >
                     Call Now
                   </a>

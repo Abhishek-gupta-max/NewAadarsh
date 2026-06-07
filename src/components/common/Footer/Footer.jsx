@@ -47,7 +47,7 @@ export const Footer = () => {
               <img src="/images/logo.jpeg" alt="New Adarsh Logo" className="h-14 w-auto object-contain bg-white p-1.5 rounded-xl shadow-lg border border-white/10" />
               <div>
                 <h4 className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>New Adarsh</h4>
-                <span className="text-amber-400/80 text-[10px] font-semibold tracking-wider uppercase">Overseas Services</span>
+                <span className="text-amber-400/80 text-[10px] font-semibold tracking-wider uppercase">Manpower Consultant</span>
               </div>
             </div>
             <p className="text-slate-400 text-[13px] leading-relaxed">
@@ -145,7 +145,7 @@ export const Footer = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
             {/* Copyright */}
             <p className="text-[12px] text-slate-500 text-center lg:text-left order-2 lg:order-1">
-              © {currentYear} <strong><Link className="text-slate-400 hover:text-[#e11d48] transition-colors" to="/">New Adarsh Overseas Services</Link></strong>. All Rights Reserved.
+              © {currentYear} <strong><Link className="text-slate-400 hover:text-[#e11d48] transition-colors" to="/">{COMPANY_NAME}</Link></strong>. All Rights Reserved.
             </p>
 
             {/* Center: Badges */}
