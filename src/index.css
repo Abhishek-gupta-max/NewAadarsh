@@ -247,3 +247,230 @@ html {
     animation: cardFadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* ========================================
+   GOOGLE TRANSLATE WIDGET OVERRIDES
+   ======================================== */
+
+/* Hide Google logo & branding text */
+.goog-logo-link,
+.goog-logo-link:hover,
+.goog-te-gadget > span {
+    display: none !important;
+}
+
+/* Remove font-size & color bleed from container */
+.goog-te-gadget {
+    color: transparent !important;
+    font-size: 0px !important;
+    line-height: 0 !important;
+}
+
+/* Style the select dropdown to match the navbar theme */
+.goog-te-gadget .goog-te-combo {
+    color: #334155 !important;
+    background-color: #f8fafc !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    outline: none !important;
+    cursor: pointer !important;
+    transition: border-color 0.2s, box-shadow 0.2s !important;
+    min-width: 110px !important;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    border-color: #0047ba !important;
+}
+
+.goog-te-gadget .goog-te-combo:focus {
+    border-color: #0047ba !important;
+    box-shadow: 0 0 0 2px rgba(0, 71, 186, 0.12) !important;
+}
+
+/* Prevent Google's top banner from pushing down the fixed navbar */
+.skiptranslate iframe,
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+body {
+    top: 0px !important;
+}
+
+/* Fix body shift that Google Translate causes */
+body.translated-ltr,
+body.translated-rtl {
+    margin-top: 0 !important;
+}
+
+/* ========================================
+   TRANSLATE CONTAINER (Globe icon + dropdown)
+   ======================================== */
+
+.translate-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.translate-container:hover {
+    border-color: #0047ba;
+    background: #eff6ff;
+}
+
+.translate-icon {
+    flex-shrink: 0;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.translate-container:hover .translate-icon {
+    opacity: 1;
+}
+
+/* Make the goog-te-combo inside the container borderless (border is on wrapper) */
+.translate-container .goog-te-gadget .goog-te-combo {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 4px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    min-width: 100px !important;
+    box-shadow: none !important;
+}
+
+.translate-container .goog-te-gadget .goog-te-combo:focus {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* ========================================
+   CUSTOM LANGUAGE DROPDOWN
+   ======================================== */
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Trigger pill button */
+.lang-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    user-select: none;
+}
+
+.lang-trigger:hover {
+    background: #eff6ff;
+    border-color: #0047ba;
+    color: #0047ba;
+}
+
+.lang-trigger:focus-visible {
+    box-shadow: 0 0 0 3px rgba(0, 71, 186, 0.15);
+}
+
+/* Globe icon */
+.lang-globe {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: #0047ba;
+}
+
+/* Label text */
+.lang-label {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Chevron arrow */
+.lang-chevron {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: #64748b;
+}
+
+.lang-chevron.rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.lang-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 9999;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+    min-width: 180px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 6px;
+    list-style: none;
+    margin: 0;
+    animation: langMenuIn 0.15s ease;
+}
+
+@keyframes langMenuIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar styling */
+.lang-menu::-webkit-scrollbar { width: 4px; }
+.lang-menu::-webkit-scrollbar-track { background: transparent; }
+.lang-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 99px; }
+
+/* Option item */
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #334155;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.lang-option:hover {
+    background: #eff6ff;
+    color: #0047ba;
+}
+
+.lang-option--active {
+    background: #dbeafe;
+    color: #0047ba;
+    font-weight: 700;
+}
