@@ -39,7 +39,7 @@ export const About = () => {
       {/* Company Info Section */}
       <section className="py-20 px-4 scroll-fade-in">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start mb-16">
             {/* Left: Our Story */}
             <div className="scroll-fade-in-left">
               <h2 className="text-4xl font-bold text-blue-900 mb-6 font-heading">Our Story</h2>
@@ -60,17 +60,19 @@ export const About = () => {
             {/* Right: Owner Image Card */}
             <div className="scroll-fade-in-right">
               <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-300">
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 h-80 flex items-center justify-center relative overflow-hidden">
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 h-[24rem] sm:h-[26rem] flex items-center justify-center relative overflow-hidden">
                   <img src="/images/corporate_desk_empty_team.jpeg" alt="Owner - New Adarsh" className="w-full h-full object-cover" />
                   <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600"></div>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-blue-900 mb-1 font-heading">Ram Pramod Patel</h3>
-                  <p className="text-amber-600 font-semibold mb-4">Founder & Director</p>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    With 15+ years of experience in overseas recruitment, Ram Pramod Patel leads New Adarsh with a commitment to ethical practices and transparent operations. His vision has transformed countless lives by connecting skilled professionals with global opportunities.
-                  </p>
+                <div className="p-6 flex flex-col h-full">
+                  <div>
+                    <h3 className="text-2xl font-bold text-blue-900 mb-1 font-heading">Ram Pramod Patel</h3>
+                    <p className="text-amber-600 font-semibold mb-4">Founder & Director</p>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      With 15+ years of experience in overseas recruitment, Ram Pramod Patel leads New Adarsh with a commitment to ethical practices and transparent operations. His vision has transformed countless lives by connecting skilled professionals with global opportunities.
+                    </p>
+                  </div>
                   <div className="pt-4 border-t border-gray-100 space-y-2">
                     <div className="flex items-center gap-3 text-sm text-slate-600">
                       <svg className="w-5 h-5 text-amber-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
