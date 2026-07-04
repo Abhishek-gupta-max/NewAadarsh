@@ -44,7 +44,7 @@ export const Footer = () => {
           {/* Col 1: Company Profile */}
           <div className="space-y-5 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3">
-              <img src="/images/logo.jpeg" alt="New Adarsh Logo" className="h-14 w-auto object-contain bg-white p-1.5 rounded-xl shadow-lg border border-white/10" />
+              <img src="/images/logo12.png" alt="New Adarsh Logo" className="h-14 w-auto object-contain bg-white p-1.5 rounded-xl shadow-lg border border-white/10" />
               <div>
                 <h4 className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "'Outfit', sans-serif" }}>New Adarsh</h4>
                 <span className="text-amber-400/80 text-[10px] font-semibold tracking-wider uppercase">Manpower Consultant</span>

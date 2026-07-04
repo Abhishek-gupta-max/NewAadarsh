@@ -58,7 +58,7 @@ export const Navbar = () => {
             {/* Company Logo */}
             <Link to="/" className="shrink-0 hover:opacity-90 transition-opacity duration-200">
               <img
-                src="/images/logo.jpeg"
+                src="/images/logo12.png"
                 alt="New Adarsh Logo"
                 className="h-10 w-auto object-contain rounded"
               />
@@ -161,7 +161,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100">
             <Link to="/" className="shrink-0" onClick={() => setIsOpen(false)}>
               <img
-                src="/images/logo.jpeg"
+                src="/images/logo12.png"
                 alt="New Adarsh Logo"
                 className="h-9 w-auto object-contain rounded"
               />
