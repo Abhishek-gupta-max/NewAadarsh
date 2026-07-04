@@ -243,7 +243,7 @@ export const About = () => {
             </div>
 
             {/* Certificate 3: MEA Emblem */}
-            <div>
+            {/* <div>
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-green-200 cursor-pointer" 
                 onClick={() => openCertModal('/images/mea_logo.png', 'MEA Official Recognition')}
@@ -272,7 +272,7 @@ export const About = () => {
                   <p className="text-slate-600 text-sm leading-relaxed">Proudly bearing the official MEA emblem, signifying our trusted partnership with the Government of India for overseas manpower.</p>
                 </div>
               </div>
-            </div>
+            </div>*/}
 
             {/* Certificate 4: Shop & Establishment */}
             <div>
