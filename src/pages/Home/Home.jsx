@@ -314,6 +314,81 @@ export const Home = () => {
                 </div>
               </div>
             </div>
+
+            {/* Certificate 4 */}
+            <div className="scroll-scale-in">
+              <div 
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-purple-200 cursor-pointer" 
+                onClick={() => openCertModal('/images/updated_shop_and_establishment.pdf', 'Shop & Establishment Certificate')}
+              >
+                <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 to-fuchsia-50 p-4 sm:p-6">
+                  <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-purple-400 to-fuchsia-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                  </div>
+                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-purple-200 bg-purple-50">
+                    <iframe
+                      src="/images/updated_shop_and_establishment.pdf#view=fitH"
+                      title="Shop & Establishment Certificate"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-5 text-center">
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Shop & Establishment</h3>
+                  <p className="text-xs text-purple-600 font-semibold">Updated PDF Certificate</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Certificate 5 */}
+            <div className="scroll-scale-in">
+              <div 
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-cyan-200 cursor-pointer" 
+                onClick={() => openCertModal('/images/udyam_registration_certificate.pdf', 'Udyam Registration Certificate')}
+              >
+                <div className="relative overflow-hidden bg-gradient-to-br from-cyan-50 to-sky-50 p-4 sm:p-6">
+                  <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                  </div>
+                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-cyan-200 bg-cyan-50">
+                    <iframe
+                      src="/images/udyam_registration_certificate.pdf#view=fitH"
+                      title="Udyam Registration Certificate"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-5 text-center">
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Udyam Registration</h3>
+                  <p className="text-xs text-cyan-600 font-semibold">Government MSME Certificate</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Certificate 6 */}
+            <div className="scroll-scale-in">
+              <div 
+                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-amber-200 cursor-pointer" 
+                onClick={() => openCertModal('/images/gst_certificate.pdf', 'GST Certificate')}
+              >
+                <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 p-4 sm:p-6">
+                  <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-amber-400 to-orange-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                  </div>
+                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-amber-200 bg-amber-50">
+                    <iframe
+                      src="/images/gst_certificate.pdf#view=fitH"
+                      title="GST Certificate"
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+                <div className="p-4 sm:p-5 text-center">
+                  <h3 className="text-base font-bold text-blue-900 font-heading">GST Certificate</h3>
+                  <p className="text-xs text-amber-600 font-semibold">Goods & Services Tax</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center mt-10">
@@ -414,11 +489,19 @@ export const Home = () => {
         size="lg"
       >
         <div className="flex items-center justify-center p-2">
-          <img 
-            src={modalContent.src} 
-            alt={modalContent.title} 
-            className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-md border border-slate-100" 
-          />
+          {modalContent.src.toLowerCase().endsWith('.pdf') ? (
+            <iframe
+              src={modalContent.src}
+              title={modalContent.title}
+              className="w-full h-[70vh] rounded-lg border border-slate-100"
+            />
+          ) : (
+            <img 
+              src={modalContent.src} 
+              alt={modalContent.title} 
+              className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-md border border-slate-100" 
+            />
+          )}
         </div>
       </Modal>
     </div>
