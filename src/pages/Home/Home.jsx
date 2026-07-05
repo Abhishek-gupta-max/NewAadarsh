@@ -248,13 +248,13 @@ export const Home = () => {
             <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-amber-200 cursor-pointer" 
-                onClick={() => openCertModal('/images/certificate.PNG', 'MEA Registration Certificate')}
+                onClick={() => openCertModal('/images/certificate.PNG', 'Certificate of Incorporation')}
               >
                 <div className="relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50 p-4 sm:p-6">
                   <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
-                  <img src="/images/certificate.PNG" alt="MEA Registration Certificate" className="w-full h-44 sm:h-52 md:h-60 object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="/images/certificate.PNG" alt="Certificate of Incorporation" className="w-full h-44 sm:h-52 md:h-60 object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
                       <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
@@ -262,7 +262,7 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
-                  <h3 className="text-base font-bold text-blue-900 font-heading">MEA Registration</h3>
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Incorporation Certificate</h3>
                   <p className="text-xs text-amber-600 font-semibold">Ministry of External Affairs</p>
                 </div>
               </div>
@@ -272,13 +272,13 @@ export const Home = () => {
             <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 cursor-pointer" 
-                onClick={() => openCertModal('/images/license_certificate.PNG', 'Government License Certificate')}
+                onClick={() => openCertModal('/images/license_certificate.PNG', 'Registration Certificate')}
               >
                 <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-50 p-4 sm:p-6">
                   <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
-                  <img src="/images/license_certificate.PNG" alt="Government License Certificate" className="w-full h-44 sm:h-52 md:h-60 object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                  <img src="/images/license_certificate.PNG" alt="Registration Certificate" className="w-full h-44 sm:h-52 md:h-60 object-contain rounded-lg transform group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
                       <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
@@ -286,14 +286,14 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
-                  <h3 className="text-base font-bold text-blue-900 font-heading">Government License</h3>
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Registration Certificate</h3>
                   <p className="text-xs text-blue-600 font-semibold">State Govt. Approved</p>
                 </div>
               </div>
             </div>
 
             {/* Certificate 3 */}
-            <div className="scroll-scale-in">
+            {/*<div className="scroll-scale-in">
               <div className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-green-200">
                 <div className="relative overflow-hidden bg-gradient-to-br from-green-50 to-emerald-50 p-4 sm:p-6">
                   <img src="/images/mea_logo.png" alt="MEA Official Emblem" className="w-full h-44 sm:h-52 md:h-60 object-contain rounded-lg" loading="lazy" />
@@ -303,16 +303,19 @@ export const Home = () => {
                   <p className="text-xs text-green-600 font-semibold">Official Govt. Emblem</p>
                 </div>
               </div>
-            </div>
+            </div>*/}
 
-            {/* Certificate 4 */}
+            {/* Certificate 3 */}
             <div className="scroll-scale-in">
               <div 
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-purple-200 cursor-pointer" 
                 onClick={() => openCertModal('/images/updated_shop_and_establishment.pdf', 'Shop & Establishment Certificate')}
               >
                 <div className="relative overflow-hidden bg-gradient-to-br from-purple-50 to-fuchsia-50 p-4 sm:p-6">
-                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-purple-200 bg-purple-50 relative">
+                  <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                  </div>
+                  <div className="w-full h-44 sm:h-52 md:h-60 overflow-hidden rounded-lg border border-dashed border-purple-200 bg-purple-50 relative">
                     <div className={`absolute inset-0 flex flex-col items-center justify-center gap-3 bg-white/90 text-purple-700 transition-opacity duration-300 ${shopPreviewLoading ? 'opacity-100' : 'pointer-events-none opacity-0'}`}>
                       <div className="h-10 w-10 rounded-full border-4 border-purple-300 border-t-transparent animate-spin" />
                       <span className="text-sm font-semibold">Loading preview...</span>
@@ -323,6 +326,11 @@ export const Home = () => {
                       className="w-full h-full"
                       onLoad={() => setShopPreviewLoading(false)}
                     />
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
+                      <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                    </div>
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
@@ -342,12 +350,17 @@ export const Home = () => {
                   <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
-                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-cyan-200 bg-cyan-50">
+                  <div className="w-full h-44 sm:h-52 md:h-60 overflow-hidden rounded-lg border border-dashed border-cyan-200 bg-cyan-50 relative">
                     <iframe
-                      src="/images/udyam_registration_certificate.pdf#view=fitH"
+                      src="/images/udyam_registration_certificate.pdf#view=fitH&toolbar=0"
                       title="Udyam Registration Certificate"
                       className="w-full h-full"
                     />
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
+                      <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                    </div>
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
@@ -367,12 +380,17 @@ export const Home = () => {
                   <div className="absolute top-3 right-3 z-10 w-9 h-9 bg-gradient-to-br from-amber-400 to-orange-600 rounded-full flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
-                  <div className="w-full h-56 sm:h-64 md:h-72 overflow-hidden rounded-lg border border-dashed border-amber-200 bg-amber-50">
+                  <div className="w-full h-44 sm:h-52 md:h-60 overflow-hidden rounded-lg border border-dashed border-amber-200 bg-amber-50 relative">
                     <iframe
-                      src="/images/gst_certificate.pdf#view=fitH"
+                      src="/images/gst_certificate.pdf#view=fitH&toolbar=0"
                       title="GST Certificate"
                       className="w-full h-full"
                     />
+                  </div>
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
+                      <svg className="w-5 h-5 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                    </div>
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { storage } from '../utils/storage';
 
 // Base API URL can be configured via environment variables or default to /api relative path
-// For local PHP integration, you can change VITE_API_URL in .env (e.g., http://localhost/api)
+// For local Node backend, you can change VITE_API_URL in .env (e.g., http://localhost:8000/api)
 const VITE_API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({

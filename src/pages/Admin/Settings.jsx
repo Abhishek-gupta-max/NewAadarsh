@@ -22,7 +22,7 @@ export const Settings = () => {
   }
 
   const systemInfo = data?.system_info || {
-    php_version: 'N/A',
+    node_version: 'N/A',
     mysql_server: 'N/A',
     server_time: 'N/A'
   };
@@ -62,8 +62,8 @@ export const Settings = () => {
           </div>
           <div className="space-y-3 font-semibold text-slate-600 text-sm">
             <div className="flex justify-between py-2 border-b border-slate-50">
-              <span className="text-slate-400">PHP Version</span>
-              <span>{systemInfo.php_version}</span>
+              <span className="text-slate-400">Node Version</span>
+              <span>{systemInfo.node_version}</span>
             </div>
             <div className="flex justify-between py-2 border-b border-slate-50">
               <span className="text-slate-400">MySQL Server</span>
