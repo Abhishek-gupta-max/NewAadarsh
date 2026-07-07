@@ -262,8 +262,8 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
-                  <h3 className="text-base font-bold text-blue-900 font-heading">Incorporation Certificate</h3>
-                  <p className="text-xs text-amber-600 font-semibold">Ministry of External Affairs</p>
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Ministry of Corporate Affairs</h3>
+            
                 </div>
               </div>
             </div>
@@ -286,8 +286,8 @@ export const Home = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
-                  <h3 className="text-base font-bold text-blue-900 font-heading">Registration Certificate</h3>
-                  <p className="text-xs text-blue-600 font-semibold">State Govt. Approved</p>
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Ministry of External Affairs</h3>
+                  {/* <p className="text-xs text-blue-600 font-semibold">State Govt. Approved</p> */}
                 </div>
               </div>
             </div>
@@ -335,7 +335,7 @@ export const Home = () => {
                 </div>
                 <div className="p-4 sm:p-5 text-center">
                   <h3 className="text-base font-bold text-blue-900 font-heading">Shop & Establishment</h3>
-                  <p className="text-xs text-purple-600 font-semibold">Updated PDF Certificate</p>
+                   {/*<p className="text-xs text-purple-600 font-semibold">Updated PDF Certificate</p> */}
                 </div>
               </div>
             </div>

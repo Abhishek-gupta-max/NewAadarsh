@@ -283,7 +283,7 @@ export const About = () => {
                 </div>
                 <div className="p-4 sm:p-5 text-center">
                   <h3 className="text-base font-bold text-blue-900 font-heading">Shop & Establishment</h3>
-                  <p className="text-xs text-purple-600 font-semibold">Updated PDF Certificate</p>
+                 {/* <p className="text-xs text-purple-600 font-semibold">Updated PDF Certificate</p> */}
                 </div>
               </div>
             </div>
@@ -312,8 +312,8 @@ export const About = () => {
                   </div>
                 </div>
                 <div className="p-4 sm:p-5 text-center">
-                  <h3 className="text-base font-bold text-blue-900 font-heading">Udyam Registration</h3>
-                  <p className="text-xs text-cyan-600 font-semibold">Government MSME Certificate</p>
+                  <h3 className="text-base font-bold text-blue-900 font-heading">Ministry of External Affairs</h3>
+                  {/* <p className="text-xs text-blue-600 font-semibold">State Govt. Approved</p> */}
                 </div>
               </div>
             </div>
