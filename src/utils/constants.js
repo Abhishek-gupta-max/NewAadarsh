@@ -9,7 +9,7 @@ export const CONTACT_INFO = {
   phone: "+91-5568297196",
   enquiryPhone: "+91-8318584169",
   employerPhone: "+91-8874633326",
-  whatsApp: "918894412776", // For WhatsApp apply links
+  whatsApp: "8957721120", // For WhatsApp apply links
   address: "Ramnath Deoria Basement & Ground Floor, Near Kali Mandir, Deoria Sadar R.S., Deoria Sadar, Deoria – 274001, Uttar Pradesh",
   landmark: "2 minutes from Kali Mandir temple",
   hours: {
@@ -21,7 +21,7 @@ export const CONTACT_INFO = {
 export const SOCIAL_LINKS = {
   facebook: "#",
   linkedin: "#",
-  whatsapp: "https://wa.me/918894412776",
+  whatsapp: "https://wa.me/918957721120",
   instagram: "#"
 };
 
