@@ -19,10 +19,11 @@ export const CONTACT_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-  facebook: "#",
+  facebook: "https://www.facebook.com/share/1DqRa66SB6/",
   linkedin: "#",
   whatsapp: "https://wa.me/918957721120",
-  instagram: "#"
+  instagram: "https://www.instagram.com/newadarsh.manpower?igsh=MTh1dzh4YzdmN3R3aA==",
+  youtube: "https://youtube.com/@adarshtechnicalinstitute12?si=7dPB2akAr4Yzv4Oy"
 };
 
 export const NAV_LINKS = [
