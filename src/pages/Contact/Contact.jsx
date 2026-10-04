@@ -37,7 +37,8 @@ export const Contact = () => {
       }
     } catch (err) {
       console.error(err);
-      setStatus({ type: 'error', message: 'Something went wrong. Please check your connection and try again.' });
+      const errorMsg = err.response?.data?.error || err.response?.data?.message || err.message || 'Something went wrong. Please check your connection and try again.';
+      setStatus({ type: 'error', message: errorMsg });
     } finally {
       setLoading(false);
     }
