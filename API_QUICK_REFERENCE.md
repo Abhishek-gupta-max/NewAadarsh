@@ -16,7 +16,7 @@ Default: `http://localhost:8000`
 
 ## 📍 Public Endpoints (No Auth)
 
-### 1. GET /api/jobs.php
+### 1. GET /api/jobs
 Fetch job listings.
 
 **Query Parameters:**
@@ -47,7 +47,7 @@ Fetch job listings.
 
 ---
 
-### 2. POST /api/contact.php
+### 2. POST /api/contact
 Submit contact form.
 
 **Request Body:**
@@ -78,7 +78,7 @@ Submit contact form.
 
 ---
 
-### 3. POST /api/apply.php
+### 3. POST /api/apply
 Submit job application with resume.
 
 **Request:** `multipart/form-data`
@@ -122,7 +122,7 @@ All admin endpoints require:
 Authorization: Bearer <token>
 ```
 
-### 4. POST /api/admin/login.php
+### 4. POST /api/admin/login
 Admin authentication.
 
 **Request Body:**
@@ -152,7 +152,7 @@ Admin authentication.
 
 ---
 
-### 5. GET /api/admin/dashboard.php
+### 5. GET /api/admin/dashboard
 Dashboard statistics (requires auth).
 
 **Query:** None
@@ -182,7 +182,7 @@ Dashboard statistics (requires auth).
 
 ---
 
-### 6. GET /api/admin/applications.php
+### 6. GET /api/admin/applications
 List applications (requires auth).
 
 **Query Parameters:**
@@ -211,7 +211,7 @@ List applications (requires auth).
 
 ---
 
-### 7. POST /api/admin/applications.php
+### 7. POST /api/admin/applications
 Update application status (requires auth).
 
 **Request Body:**
@@ -235,7 +235,7 @@ Update application status (requires auth).
 
 ---
 
-### 8. DELETE /api/admin/applications.php
+### 8. DELETE /api/admin/applications
 Delete application & uploaded file (requires auth).
 
 **Query:** `?id=5`
@@ -250,7 +250,7 @@ Delete application & uploaded file (requires auth).
 
 ---
 
-### 9. GET /api/admin/requirements.php
+### 9. GET /api/admin/requirements
 List job positions (requires auth).
 
 **Query Parameters:**
@@ -277,7 +277,7 @@ List job positions (requires auth).
 
 ---
 
-### 10. POST /api/admin/requirements.php
+### 10. POST /api/admin/requirements
 Add new job position (requires auth).
 
 **Request Body:**
@@ -303,7 +303,7 @@ Add new job position (requires auth).
 
 ---
 
-### 11. PUT /api/admin/requirements.php
+### 11. PUT /api/admin/requirements
 Update job position (requires auth).
 
 **Request Body:**
@@ -330,7 +330,7 @@ Update job position (requires auth).
 
 ---
 
-### 12. DELETE /api/admin/requirements.php
+### 12. DELETE /api/admin/requirements
 Delete job position (requires auth).
 
 **Query:** `?id=5`
@@ -345,7 +345,7 @@ Delete job position (requires auth).
 
 ---
 
-### 13. GET /api/admin/settings.php
+### 13. GET /api/admin/settings
 System diagnostics (requires auth).
 
 **Response:**
@@ -384,14 +384,14 @@ System diagnostics (requires auth).
 
 ### Get All Jobs
 ```javascript
-const response = await fetch('http://localhost:8000/api/jobs.php');
+const response = await fetch('http://localhost:8000/api/jobs');
 const jobs = await response.json();
 console.log(jobs);
 ```
 
 ### Submit Contact Form
 ```javascript
-const response = await fetch('http://localhost:8000/api/contact.php', {
+const response = await fetch('http://localhost:8000/api/contact', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -415,7 +415,7 @@ formData.append('job_position', 'Engineer');
 formData.append('experience', '3 years');
 formData.append('resume', fileInputElement.files[0]);
 
-const response = await fetch('http://localhost:8000/api/apply.php', {
+const response = await fetch('http://localhost:8000/api/apply', {
   method: 'POST',
   body: formData
 });
@@ -424,7 +424,7 @@ const data = await response.json();
 
 ### Admin Login
 ```javascript
-const response = await fetch('http://localhost:8000/api/admin/login.php', {
+const response = await fetch('http://localhost:8000/api/admin/login', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -439,7 +439,7 @@ localStorage.setItem('authToken', token);
 ### Get Dashboard (with Token)
 ```javascript
 const token = localStorage.getItem('authToken');
-const response = await fetch('http://localhost:8000/api/admin/dashboard.php', {
+const response = await fetch('http://localhost:8000/api/admin/dashboard', {
   headers: {
     'Authorization': `Bearer ${token}`
   }
@@ -450,7 +450,7 @@ const data = await response.json();
 ### Update Application Status
 ```javascript
 const token = localStorage.getItem('authToken');
-const response = await fetch('http://localhost:8000/api/admin/applications.php', {
+const response = await fetch('http://localhost:8000/api/admin/applications', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

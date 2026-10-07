@@ -1,0 +1,31 @@
+-- database/migrations/README.md (in SQL comment style for consistency)
+-- See database/migrations/README.md for the migration guide.
+--
+-- MIGRATION TEMPLATE
+-- Copy this file and rename it: YYYYMMDD_HHMMSS_description.sql
+-- Example: 20261001_120000_add_index_to_applications_status.sql
+--
+-- RULES:
+--   1. Never DROP TABLE or DROP COLUMN without DBA approval.
+--   2. Never truncate or delete data.
+--   3. All DDL must be backward-compatible (add columns with DEFAULT, not NOT NULL without DEFAULT).
+--   4. Test on a local copy of the database before running on production.
+--   5. Keep the rollback section up to date.
+--   6. Record the migration in the migration log below after running.
+--
+-- ─── Migration metadata ───────────────────────────────────────────────────────
+-- Migration ID: YYYYMMDD_HHMMSS
+-- Description:  <short description>
+-- Author:       <name>
+-- Date applied: <date>
+-- Applied to:   [ ] local  [ ] staging  [ ] production
+--
+-- ─── Up (apply) ──────────────────────────────────────────────────────────────
+
+-- <SQL statements here>
+-- Example: ALTER TABLE applications ADD INDEX idx_status (status);
+
+-- ─── Down (rollback) ─────────────────────────────────────────────────────────
+
+-- <Rollback SQL here — must undo the Up section completely>
+-- Example: ALTER TABLE applications DROP INDEX idx_status;

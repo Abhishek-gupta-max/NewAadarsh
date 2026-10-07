@@ -1,0 +1,25 @@
+{
+  "name": "newaadarsh-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "New Adarsh Manpower - Next.js backend (API) that also serves the React frontend",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build --webpack",
+    "start": "node server.js",
+    "build:frontend": "npm --prefix ../frontend ci && npm --prefix ../frontend run build && node scripts/copy-frontend.mjs",
+    "build:full": "npm run build:frontend && next build --webpack",
+    "build:hostinger": "npm run build:frontend && node scripts/package-deploy.mjs"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.24.5",
+    "next": "^16.3.8",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

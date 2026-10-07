@@ -1,0 +1,11 @@
+node_modules
+.next
+.env
+.env.local
+.env.*.local
+
+# Copied from ../frontend/dist at build time (scripts/copy-frontend.mjs)
+public
+
+# Next.js build output (distDir in next.config.mjs)
+dist

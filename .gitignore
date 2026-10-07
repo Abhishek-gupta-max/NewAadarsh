@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.next
 dist
 dist-ssr
 *.local
@@ -27,7 +28,11 @@ dist-ssr
 .env
 .env.local
 .env.*
-server/.env
+!.env.example
 
 # Uploads
 uploads/
+
+# Hostinger deploy package (npm run build:hostinger)
+deploy/
+backend-deploy.zip

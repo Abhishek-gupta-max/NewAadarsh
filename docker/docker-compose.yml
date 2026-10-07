@@ -1,0 +1,84 @@
+version: '3.9'
+
+# Local development Docker Compose
+# NOTE: This is for LOCAL DEVELOPMENT ONLY.
+# Production runs on Hostinger — do NOT use this file in production.
+#
+# Usage:
+#   docker compose up -d
+#   docker compose down
+#   docker compose logs -f backend
+
+services:
+  # ─── MySQL Database ──────────────────────────────────────────────────────────
+  db:
+    image: mysql:8
+    container_name: newaadarsh_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword   # change for your local setup
+      MYSQL_DATABASE: newaadarsh_dev
+      MYSQL_USER: newaadarsh
+      MYSQL_PASSWORD: devpassword         # change for your local setup
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Initialize schema on first run (does not touch existing data):
+      - ./database/schemas/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "newaadarsh", "-pdevpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Next.js Backend (API) ───────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend.dev
+    container_name: newaadarsh_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: newaadarsh
+      DB_PASSWORD: devpassword
+      DB_NAME: newaadarsh_dev
+      # Set these in your shell or a .env file (not committed):
+      JWT_SECRET: ${JWT_SECRET:-change-this-in-local-dev}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-adminpassword}
+      UPLOADS_DIR: /app/uploads
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+      - ./uploads:/app/uploads
+
+  # ─── React Frontend (Vite) ───────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend.dev
+    container_name: newaadarsh_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      VITE_API_BASE_URL: ""   # empty = proxy to same host
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  mysql_data:
+    driver: local
